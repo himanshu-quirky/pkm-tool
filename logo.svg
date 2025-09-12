@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Notegrain logo">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#1E293B"/>
+    </linearGradient>
+  </defs>
+  <rect width="240" height="240" rx="28" fill="url(#g)"/>
+  <!-- stylized grain / note-leaf -->
+  <g transform="translate(60,40)">
+    <path d="M60 0c28 18 48 44 48 76 0 40-32 72-72 72S-12 116 0 76C10 44 32 18 60 0z" fill="#8BD3E6"/>
+    <path d="M60 16c20 14 34 34 34 60 0 32-26 58-58 58S-2 108 4 76c6-26 20-46 56-60z" fill="#C7F0FF"/>
+    <!-- note line -->
+    <path d="M28 96h64a6 6 0 0 0 0-12H28a6 6 0 0 0 0 12z" fill="#0F172A" opacity="0.6"/>
+    <path d="M36 74h56a6 6 0 0 0 0-12H36a6 6 0 0 0 0 12z" fill="#0F172A" opacity="0.5"/>
+  </g>
+  <!-- N mark -->
+  <path d="M78 182v-70h12l34 44v-44h12v70h-12l-34-44v44H78z" fill="#E6F7FF"/>
+</svg>
