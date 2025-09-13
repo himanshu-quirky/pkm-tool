@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PKM Tool</title>
-<style>
-body {
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Inter, sans-serif;
-  margin: 0;
-  padding: 2rem;
-  background: #f8fafc;
-  color: #0f172a;
-}
-main {
-  max-width: 720px;
-  margin: 0 auto;
-  text-align: center;
-}
-h1 {
-  margin-top: 0.5rem;
-}
-img {
-  width: 96px;
-  height: 96px;
-  border-radius: 16px;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Knowledge Tool</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main>
-  <img src="logo.svg" alt="Logo">
-  <h1>Personal Knowledge Tool</h1>
-  <p>This is a placeholder page for the PKM tool (formerly Notegrain). The full application is under development. Check back later for updates.</p>
-</main>
+  <header>
+    <img src="logo.svg" alt="Logo">
+    <h1>Personal Knowledge Tool</h1>
+  </header>
+  <div id="app">
+    <aside id="sidebar">
+      <button id="new-note">+ New Note</button>
+      <div id="note-list"></div>
+    </aside>
+    <main id="content">
+      <div id="editor">
+        <input id="note-title" placeholder="Title">
+        <textarea id="note-content" placeholder="Write your note here..."></textarea>
+        <button id="save-note">Save</button>
+      </div>
+      <div id="viewer">
+        <h2 id="viewer-title"></h2>
+        <div id="viewer-content"></div>
+        <div id="viewer-tags"></div>
+        <div id="viewer-backlinks">
+          <h3>Referenced by:</h3>
+          <ul id="backlinks-list"></ul>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer>
+    <small>All data saved locally. No AI features.</small>
+  </footer>
+  <script src="app.js"></script>
 </body>
 </html>
