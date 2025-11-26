@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My PKM Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <rect width="32" height="32" rx="8" fill="url(#gradient)"/>
+                        <path d="M16 8L24 16L16 24L8 16L16 8Z" fill="white"/>
+                        <defs>
+                            <linearGradient id="gradient" x1="0" y1="0" x2="32" y2="32">
+                                <stop offset="0%" stop-color="#6366f1"/>
+                                <stop offset="100%" stop-color="#8b5cf6"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span class="logo-text">My PKM</span>
+                </div>
+            </div>
+            
+            <nav class="nav">
+                <a href="#" class="nav-item active" data-view="today">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
+                    </svg>
+                    Today
+                </a>
+                <a href="#" class="nav-item" data-view="upcoming">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"/>
+                    </svg>
+                    Upcoming
+                </a>
+                <a href="#" class="nav-item" data-view="completed">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                    </svg>
+                    Completed
+                </a>
+                <a href="#" class="nav-item" data-view="settings">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"/>
+                    </svg>
+                    Settings
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="sync-status">
+                    <div class="sync-indicator"></div>
+                    <span>All changes saved</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-header">
+                <div class="header-left">
+                    <h1 id="view-title">Today</h1>
+                    <p id="view-subtitle" class="subtitle"></p>
+                </div>
+                <div class="header-right">
+                    <button class="btn-secondary" id="sync-slack">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                            <path d="M8 3a5 5 0 100 10 5 5 0 000-10zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"/>
+                        </svg>
+                        Test Slack
+                    </button>
+                </div>
+            </div>
+
+            <!-- Today View -->
+            <div id="today-view" class="view active">
+                <div class="task-input-container">
+                    <input 
+                        type="text" 
+                        id="task-input" 
+                        class="task-input" 
+                        placeholder="Add a new task..."
+                        autocomplete="off"
+                    >
+                    <button id="add-task-btn" class="btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"/>
+                        </svg>
+                        Add Task
+                    </button>
+                </div>
+
+                <div class="tasks-container">
+                    <div class="task-section">
+                        <h3 class="section-title">In Progress</h3>
+                        <div id="pending-tasks" class="task-list">
+                            <!-- Tasks will be added here -->
+                        </div>
+                    </div>
+
+                    <div class="task-section">
+                        <h3 class="section-title">Completed Today</h3>
+                        <div id="completed-tasks" class="task-list">
+                            <!-- Completed tasks will be added here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upcoming View -->
+            <div id="upcoming-view" class="view">
+                <div id="upcoming-tasks-list"></div>
+            </div>
+
+            <!-- Completed View -->
+            <div id="completed-view" class="view">
+                <div id="all-completed-tasks"></div>
+            </div>
+
+            <!-- Settings View -->
+            <div id="settings-view" class="view">
+                <div class="settings-container">
+                    <div class="settings-section">
+                        <h3>Slack Integration</h3>
+                        <p class="settings-description">Configure Slack webhook to receive daily task summaries at 6:00 PM</p>
+                        
+                        <div class="form-group">
+                            <label for="slack-webhook">Slack Webhook URL</label>
+                            <input 
+                                type="text" 
+                                id="slack-webhook" 
+                                class="input-field"
+                                placeholder="https://hooks.slack.com/services/..."
+                            >
+                            <small>Get your webhook URL from <a href="https://api.slack.com/messaging/webhooks" target="_blank">Slack API</a></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="slack-channel">Channel Name (optional)</label>
+                            <input 
+                                type="text" 
+                                id="slack-channel" 
+                                class="input-field"
+                                placeholder="#daily-tasks"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notification-time">Daily Notification Time</label>
+                            <input 
+                                type="time" 
+                                id="notification-time" 
+                                class="input-field"
+                                value="18:00"
+                            >
+                        </div>
+
+                        <button id="save-settings" class="btn-primary">Save Settings</button>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>Data Management</h3>
+                        <p class="settings-description">Export or clear your task data</p>
+                        
+                        <div class="button-group">
+                            <button id="export-data" class="btn-secondary">Export Data</button>
+                            <button id="clear-data" class="btn-danger">Clear All Data</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
