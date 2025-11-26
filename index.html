@@ -3,278 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cortex - Your Digital Second Brain</title>
+    <title>Nexus - Your Digital Second Brain</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Main App Container -->
     <div class="app">
-        <!-- Sidebar Navigation -->
+        <!-- Sidebar -->
         <aside class="sidebar">
             <div class="sidebar-header">
                 <div class="logo">
-                    <svg class="logo-icon" width="28" height="28" viewBox="0 0 28 28" fill="none">
-                        <circle cx="14" cy="14" r="12" fill="url(#brainGradient)"/>
-                        <path d="M14 6C14 6 10 8 10 12C10 14 11 15 12 15.5C11 16 9 17 9 19C9 21 11 22 14 22C17 22 19 21 19 19C19 17 17 16 16 15.5C17 15 18 14 18 12C18 8 14 6 14 6Z" fill="white" opacity="0.9"/>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="url(#logoGradient)" opacity="0.9"/>
+                        <path d="M2 17L12 22L22 17" stroke="url(#logoGradient)" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="url(#logoGradient)" stroke-width="2" stroke-linecap="round"/>
                         <defs>
-                            <linearGradient id="brainGradient" x1="0" y1="0" x2="28" y2="28">
-                                <stop offset="0%" stop-color="#8B5CF6"/>
-                                <stop offset="100%" stop-color="#6366F1"/>
+                            <linearGradient id="logoGradient" x1="0" y1="0" x2="24" y2="24">
+                                <stop offset="0%" stop-color="#3B82F6"/>
+                                <stop offset="100%" stop-color="#1D4ED8"/>
                             </linearGradient>
                         </defs>
                     </svg>
-                    <span class="logo-text">Cortex</span>
+                    <span class="logo-text">Nexus</span>
                 </div>
             </div>
 
-            <nav class="nav-section">
-                <div class="nav-group">
-                    <div class="nav-group-title">WORKSPACE</div>
-                    <a href="#" class="nav-link active" data-view="daily">
-                        <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
-                        </svg>
-                        <span>Daily Note</span>
-                    </a>
-                    <a href="#" class="nav-link" data-view="notes">
-                        <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M9 2a2 2 0 00-2 2v8a2 2 0 002 2h6a2 2 0 002-2V6.414A2 2 0 0016.414 5L14 2.586A2 2 0 0012.586 2H9z"/>
-                            <path d="M3 8a2 2 0 012-2v10h8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/>
-                        </svg>
-                        <span>All Notes</span>
-                        <span class="count">12</span>
-                    </a>
-                    <a href="#" class="nav-link" data-view="tasks">
-                        <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
-                        </svg>
-                        <span>Tasks</span>
-                        <span class="count">5</span>
-                    </a>
-                </div>
+            <nav class="nav">
+                <a href="#" class="nav-item active" data-view="home">
+                    <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                    </svg>
+                    <span>Home</span>
+                </a>
 
-                <div class="nav-group">
-                    <div class="nav-group-title">COLLECTIONS</div>
-                    <a href="#" class="nav-link" data-view="ideas">
-                        <span class="emoji-icon">💡</span>
-                        <span>Ideas</span>
-                        <span class="count">8</span>
-                    </a>
-                    <a href="#" class="nav-link" data-view="projects">
-                        <span class="emoji-icon">🚀</span>
-                        <span>Projects</span>
-                        <span class="count">3</span>
-                    </a>
-                    <a href="#" class="nav-link" data-view="reading">
-                        <span class="emoji-icon">📚</span>
-                        <span>Reading List</span>
-                        <span class="count">6</span>
-                    </a>
-                </div>
+                <a href="#" class="nav-item" data-view="calendar">
+                    <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
+                    </svg>
+                    <span>Calendar</span>
+                </a>
+
+                <a href="#" class="nav-item" data-view="daily">
+                    <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9 2a2 2 0 00-2 2v8a2 2 0 002 2h6a2 2 0 002-2V6.414A2 2 0 0016.414 5L14 2.586A2 2 0 0012.586 2H9z"/>
+                        <path d="M3 8a2 2 0 012-2v10h8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/>
+                    </svg>
+                    <span>Daily Notes</span>
+                </a>
+
+                <div class="nav-divider"></div>
+                <div class="nav-label">OBJECTS</div>
+
+                <a href="#" class="nav-item" data-view="weblinks">
+                    <span class="emoji">🌐</span>
+                    <span>Weblinks</span>
+                </a>
+
+                <a href="#" class="nav-item" data-view="notes">
+                    <span class="emoji">📝</span>
+                    <span>Notes</span>
+                    <span class="count">12</span>
+                </a>
+
+                <a href="#" class="nav-item" data-view="tasks">
+                    <span class="emoji">✅</span>
+                    <span>Tasks</span>
+                    <span class="count">5</span>
+                </a>
+
+                <a href="#" class="nav-item" data-view="projects">
+                    <span class="emoji">🚀</span>
+                    <span>Projects</span>
+                    <span class="count">3</span>
+                </a>
+
+                <a href="#" class="nav-item" data-view="ideas">
+                    <span class="emoji">💡</span>
+                    <span>Ideas</span>
+                    <span class="count">8</span>
+                </a>
             </nav>
 
             <div class="sidebar-footer">
-                <button class="new-note-btn" id="new-note-btn">
-                    <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"/>
+                <button class="settings-btn">
+                    <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"/>
                     </svg>
-                    New Note
                 </button>
             </div>
         </aside>
 
-        <!-- Main Content Area -->
+        <!-- Main Content -->
         <main class="main-content">
-            <!-- Daily Note View -->
-            <div id="daily-view" class="view active">
-                <div class="view-header">
-                    <div class="breadcrumb">
-                        <span>Daily Notes</span>
-                        <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"/>
-                        </svg>
-                        <span id="daily-date">Tuesday, November 26, 2024</span>
-                    </div>
+            <!-- Home View -->
+            <div id="home-view" class="view active">
+                <div class="page-header">
+                    <h1 class="page-title">👋 Home</h1>
                 </div>
 
-                <div class="daily-container">
-                    <!-- Daily Summary Card -->
-                    <div class="card summary-card">
-                        <div class="card-header">
-                            <h2>Today's Focus</h2>
-                            <div class="card-actions">
-                                <button class="icon-btn" title="Edit">
-                                    <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
-                                        <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <div class="focus-input-wrapper">
-                                <textarea 
-                                    id="daily-focus" 
-                                    class="focus-input" 
-                                    placeholder="What's your main focus today?"
-                                    rows="2"
-                                >Complete Cortex second brain implementation and deploy to GitHub</textarea>
-                            </div>
-                        </div>
-                    </div>
-
+                <div class="dashboard">
                     <!-- Quick Stats -->
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-icon">✅</div>
-                            <div class="stat-content">
-                                <div class="stat-value">3</div>
-                                <div class="stat-label">Tasks Done</div>
-                            </div>
+                    <div class="stats-row">
+                        <div class="stat-box">
+                            <div class="stat-value" id="tasks-today-count">5</div>
+                            <div class="stat-label">Tasks Today</div>
                         </div>
-                        <div class="stat-card">
-                            <div class="stat-icon">📝</div>
-                            <div class="stat-content">
-                                <div class="stat-value">2</div>
-                                <div class="stat-label">Notes Created</div>
-                            </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="tasks-completed-count">2</div>
+                            <div class="stat-label">Completed</div>
                         </div>
-                        <div class="stat-card">
-                            <div class="stat-icon">💡</div>
-                            <div class="stat-content">
-                                <div class="stat-value">5</div>
-                                <div class="stat-label">Ideas Captured</div>
-                            </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="notes-count">12</div>
+                            <div class="stat-label">Total Notes</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="projects-count">3</div>
+                            <div class="stat-label">Active Projects</div>
                         </div>
                     </div>
 
-                    <!-- Tasks Section -->
-                    <div class="card">
-                        <div class="card-header">
+                    <!-- Today's Focus -->
+                    <div class="focus-card">
+                        <div class="card-header-simple">
+                            <h2>Today's Focus</h2>
+                        </div>
+                        <div class="focus-content">
+                            <input 
+                                type="text" 
+                                id="focus-input" 
+                                class="focus-field"
+                                placeholder="What's your main priority today?"
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Today's Tasks Preview -->
+                    <div class="section-card">
+                        <div class="section-header">
                             <h2>Today's Tasks</h2>
-                            <button class="text-btn" id="add-task-btn">+ Add Task</button>
+                            <button class="link-btn" onclick="switchToView('tasks')">View all →</button>
                         </div>
-                        <div class="card-content">
-                            <div class="task-list" id="today-tasks">
-                                <!-- Tasks will be dynamically added -->
+                        <div id="home-tasks-preview" class="task-list-preview"></div>
+                    </div>
+
+                    <!-- Recent Notes -->
+                    <div class="section-card">
+                        <div class="section-header">
+                            <h2>Recent Notes</h2>
+                            <button class="link-btn" onclick="switchToView('notes')">View all →</button>
+                        </div>
+                        <div class="notes-preview">
+                            <div class="note-preview-item">
+                                <span class="note-emoji">📝</span>
+                                <div class="note-preview-content">
+                                    <div class="note-preview-title">Getting Started with Nexus</div>
+                                    <div class="note-preview-date">Today</div>
+                                </div>
                             </div>
-                            <div class="task-input-row" style="display: none;" id="task-input-row">
-                                <input type="text" class="inline-input" id="task-input" placeholder="What needs to be done?">
-                                <button class="icon-btn" id="save-task-btn">
-                                    <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Quick Notes -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h2>Quick Notes</h2>
-                            <div class="card-actions">
-                                <button class="icon-btn" title="Add note">
-                                    <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <div class="note-editor" id="quick-notes" contenteditable="true" data-placeholder="Jot down anything..."></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- All Notes View -->
-            <div id="notes-view" class="view">
-                <div class="view-header">
-                    <div class="breadcrumb">
-                        <span>All Notes</span>
-                    </div>
-                    <div class="view-actions">
-                        <div class="search-box">
-                            <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"/>
-                            </svg>
-                            <input type="text" placeholder="Search notes..." class="search-input">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="notes-grid">
-                    <!-- Example Notes -->
-                    <div class="note-card">
-                        <div class="note-card-header">
-                            <span class="note-type">💡 Idea</span>
-                            <span class="note-date">Nov 26</span>
-                        </div>
-                        <h3 class="note-title">Cortex Architecture</h3>
-                        <p class="note-preview">Building a second brain with beautiful Capacities-inspired design. Focus on connections between notes...</p>
-                        <div class="note-tags">
-                            <span class="tag">design</span>
-                            <span class="tag">project</span>
-                        </div>
-                    </div>
-
-                    <div class="note-card">
-                        <div class="note-card-header">
-                            <span class="note-type">📚 Reading</span>
-                            <span class="note-date">Nov 25</span>
-                        </div>
-                        <h3 class="note-title">Building a Second Brain</h3>
-                        <p class="note-preview">Key insights from Tiago Forte's methodology. CODE framework: Capture, Organize, Distill, Express...</p>
-                        <div class="note-tags">
-                            <span class="tag">productivity</span>
-                            <span class="tag">learning</span>
-                        </div>
-                    </div>
-
-                    <div class="note-card">
-                        <div class="note-card-header">
-                            <span class="note-type">🚀 Project</span>
-                            <span class="note-date">Nov 24</span>
-                        </div>
-                        <h3 class="note-title">Q4 Goals Review</h3>
-                        <p class="note-preview">Quarterly review and planning. Main achievements: launched 3 features, improved team collaboration...</p>
-                        <div class="note-tags">
-                            <span class="tag">goals</span>
-                            <span class="tag">review</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tasks View -->
-            <div id="tasks-view" class="view">
-                <div class="view-header">
-                    <div class="breadcrumb">
-                        <span>All Tasks</span>
-                    </div>
-                    <div class="view-actions">
-                        <button class="filter-btn active">All</button>
-                        <button class="filter-btn">Active</button>
-                        <button class="filter-btn">Completed</button>
-                    </div>
-                </div>
-
-                <div class="tasks-container">
-                    <div class="task-section">
-                        <h3 class="section-header">Today</h3>
-                        <div class="task-list" id="all-tasks-today">
-                            <!-- Tasks populated by JS -->
-                        </div>
-                    </div>
-
-                    <div class="task-section">
-                        <h3 class="section-header">Upcoming</h3>
-                        <div class="task-list">
-                            <div class="task-item">
-                                <div class="task-checkbox"></div>
-                                <div class="task-content">
-                                    <span class="task-text">Client presentation preparation</span>
-                                    <span class="task-meta">Tomorrow • 2:00 PM</span>
+                            <div class="note-preview-item">
+                                <span class="note-emoji">💡</span>
+                                <div class="note-preview-content">
+                                    <div class="note-preview-title">Project Ideas</div>
+                                    <div class="note-preview-date">Yesterday</div>
                                 </div>
                             </div>
                         </div>
@@ -282,59 +171,159 @@
                 </div>
             </div>
 
-            <!-- Ideas View -->
-            <div id="ideas-view" class="view">
-                <div class="view-header">
-                    <div class="breadcrumb">
-                        <span>💡 Ideas</span>
+            <!-- Calendar View -->
+            <div id="calendar-view" class="view">
+                <div class="page-header">
+                    <h1 class="page-title">📅 Calendar</h1>
+                    <div class="calendar-controls">
+                        <button class="btn-secondary" id="cal-prev">←</button>
+                        <button class="btn-secondary" id="cal-today">Today</button>
+                        <button class="btn-secondary" id="cal-next">→</button>
                     </div>
                 </div>
-                <div class="notes-grid">
-                    <div class="note-card">
-                        <div class="note-card-header">
-                            <span class="note-type">💡 Idea</span>
-                            <span class="note-date">Nov 26</span>
-                        </div>
-                        <h3 class="note-title">AI-Powered Note Connections</h3>
-                        <p class="note-preview">What if Cortex could automatically suggest connections between related notes based on content?</p>
+
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <h2 id="calendar-month-year"></h2>
+                    </div>
+                    <div class="calendar-grid">
+                        <div class="calendar-day-header">Mo</div>
+                        <div class="calendar-day-header">Tu</div>
+                        <div class="calendar-day-header">We</div>
+                        <div class="calendar-day-header">Th</div>
+                        <div class="calendar-day-header">Fr</div>
+                        <div class="calendar-day-header">Sa</div>
+                        <div class="calendar-day-header">Su</div>
+                        <!-- Days populated by JS -->
+                        <div id="calendar-days"></div>
                     </div>
                 </div>
             </div>
 
-            <!-- Projects View -->
+            <!-- Daily Notes View -->
+            <div id="daily-view" class="view">
+                <div class="page-header">
+                    <h1 class="page-title" id="daily-title">📝 Daily Notes</h1>
+                </div>
+
+                <div class="content-container">
+                    <!-- Daily Journal Sections -->
+                    <div class="journal-section">
+                        <h3 class="journal-heading">The Good</h3>
+                        <textarea class="journal-input" id="journal-good" placeholder="What went well today?"></textarea>
+                    </div>
+
+                    <div class="journal-section">
+                        <h3 class="journal-heading">The Bad</h3>
+                        <textarea class="journal-input" id="journal-bad" placeholder="What could be better?"></textarea>
+                    </div>
+
+                    <div class="journal-section">
+                        <h3 class="journal-heading">The Learnings</h3>
+                        <textarea class="journal-input" id="journal-learning" placeholder="What did you learn?"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tasks View -->
+            <div id="tasks-view" class="view">
+                <div class="page-header">
+                    <h1 class="page-title">✅ Tasks</h1>
+                    <button class="btn-primary" id="add-task-btn-main">
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"/>
+                        </svg>
+                        Add Task
+                    </button>
+                </div>
+
+                <div class="content-container">
+                    <div id="task-input-container" class="task-input-container" style="display: none;">
+                        <input type="text" id="new-task-input" class="task-new-input" placeholder="What needs to be done?">
+                        <div class="task-input-actions">
+                            <button class="btn-primary" id="save-task-btn">Save</button>
+                            <button class="btn-secondary" id="cancel-task-btn">Cancel</button>
+                        </div>
+                    </div>
+
+                    <div class="tasks-section">
+                        <h3 class="section-heading">Today</h3>
+                        <div id="tasks-list" class="task-list"></div>
+                    </div>
+
+                    <div class="tasks-section">
+                        <h3 class="section-heading">Completed</h3>
+                        <div id="tasks-completed-list" class="task-list"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notes View -->
+            <div id="notes-view" class="view">
+                <div class="page-header">
+                    <h1 class="page-title">📝 All Notes</h1>
+                </div>
+
+                <div class="content-container">
+                    <div class="notes-grid">
+                        <div class="note-card-item">
+                            <div class="note-card-icon">📝</div>
+                            <div class="note-card-title">Getting Started</div>
+                            <div class="note-card-preview">Welcome to Nexus! This is your digital second brain...</div>
+                            <div class="note-card-date">Today at 2:30 PM</div>
+                        </div>
+                        <div class="note-card-item">
+                            <div class="note-card-icon">💡</div>
+                            <div class="note-card-title">Project Ideas</div>
+                            <div class="note-card-preview">Collection of interesting project concepts...</div>
+                            <div class="note-card-date">Yesterday</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Object Views (Weblinks, Projects, Ideas) -->
+            <div id="weblinks-view" class="view">
+                <div class="page-header">
+                    <h1 class="page-title">🌐 Weblinks</h1>
+                </div>
+                <div class="content-container">
+                    <div class="empty-state">
+                        <div class="empty-icon">🌐</div>
+                        <h3>No weblinks yet</h3>
+                        <p>Save interesting links here</p>
+                    </div>
+                </div>
+            </div>
+
             <div id="projects-view" class="view">
-                <div class="view-header">
-                    <div class="breadcrumb">
-                        <span>🚀 Projects</span>
-                    </div>
+                <div class="page-header">
+                    <h1 class="page-title">🚀 Projects</h1>
                 </div>
-                <div class="notes-grid">
-                    <div class="note-card">
-                        <div class="note-card-header">
-                            <span class="note-type">🚀 Project</span>
-                            <span class="note-date">Active</span>
+                <div class="content-container">
+                    <div class="notes-grid">
+                        <div class="note-card-item">
+                            <div class="note-card-icon">🚀</div>
+                            <div class="note-card-title">Nexus Development</div>
+                            <div class="note-card-preview">Building the ultimate second brain tool</div>
+                            <div class="note-card-date">Active</div>
                         </div>
-                        <h3 class="note-title">Cortex Development</h3>
-                        <p class="note-preview">Building the ultimate second brain tool with beautiful design and powerful features.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Reading List View -->
-            <div id="reading-view" class="view">
-                <div class="view-header">
-                    <div class="breadcrumb">
-                        <span>📚 Reading List</span>
-                    </div>
+            <div id="ideas-view" class="view">
+                <div class="page-header">
+                    <h1 class="page-title">💡 Ideas</h1>
                 </div>
-                <div class="notes-grid">
-                    <div class="note-card">
-                        <div class="note-card-header">
-                            <span class="note-type">📚 Reading</span>
-                            <span class="note-date">In Progress</span>
+                <div class="content-container">
+                    <div class="notes-grid">
+                        <div class="note-card-item">
+                            <div class="note-card-icon">💡</div>
+                            <div class="note-card-title">AI-Powered Note Connections</div>
+                            <div class="note-card-preview">Automatically suggest related notes based on content...</div>
+                            <div class="note-card-date">Today</div>
                         </div>
-                        <h3 class="note-title">How to Take Smart Notes</h3>
-                        <p class="note-preview">Sönke Ahrens' guide to the Zettelkasten method and effective note-taking.</p>
                     </div>
                 </div>
             </div>
